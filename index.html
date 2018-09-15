@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="game.js"></script>
+</head>
+<body>
+<div class="container">
+    <div class="screen">
+        <canvas></canvas>
+    </div>
+    <div class="controls">
+        <ul>
+            <li>
+                <button id="start" onclick="game.renderCellsStates()">start</button>
+            </li>
+            <li>
+                <button id="pause" onclick="game.pause()">pause</button>
+            </li>
+            <li>
+                <button id="stop" onclick="game.stop()">stop</button>
+            </li>
+            <li>
+                <button id="random" onclick="game.randomCells()">random</button>
+            </li>
+            <li>
+                <input type="range" id="speed_control" min="1" max="20"  value="10" oninput="game.changeFPS(this.value)">
+            </li>
+        </ul>
+    </div>
+</div>
+
+<style>
+    .container:after{
+        content:"";
+        display: block;
+        clear: both;
+    }
+
+    .screen{
+        float: left;
+    }
+
+    .controls{
+        float: left;
+    }
+
+    ul{
+        list-style: none;
+        margin: 0px;
+        position: fixed;
+    }
+
+    ul li{
+        margin-bottom: 10px;
+    }
+
+    button{
+        width:200px;
+        height: 40px;
+        text-transform: uppercase;
+    }
+
+    #speed_control{
+        width: 200px;
+    }
+
+</style>
+</body>
+</html>
